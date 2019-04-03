@@ -4,6 +4,8 @@ using Brotal.Extensions;
 
 using Xunit;
 
+using static System.DayOfWeek;
+
 namespace BrotalExtensions.Tests
 {
     public class DateTimeExtensionsTests
@@ -40,28 +42,28 @@ namespace BrotalExtensions.Tests
             new object[]
             {
                 new DateTime(2019, 1, 9),
-                DayOfWeek.Sunday,
+                Sunday,
                 new DateTime(2019, 1, 6)
             },
 
             new object[]
             {
                 new DateTime(2019, 3, 9),
-                DayOfWeek.Sunday,
+                Sunday,
                 new DateTime(2019, 3, 3)
             },
 
             new object[]
             {
                 new DateTime(2019, 1, 1),
-                DayOfWeek.Monday,
+                Monday,
                 new DateTime(2018, 12, 31)
             },
             new object[]
             {
-                new DateTime(2019, 1, 9),
-                DayOfWeek.Sunday,
-                new DateTime(2019, 1, 6)
+                new DateTime(2019, 4, 10),
+                Saturday,
+                new DateTime(2019, 4, 6)
             }
         };
 
