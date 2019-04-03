@@ -4,7 +4,7 @@
     <RootNamespace>Brotal</RootNamespace>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    
+
     <Title>BrotalLib</Title>
     <Version>0.1.0</Version>
     <Company>Brotal</Company>
@@ -13,12 +13,15 @@
     <Description>
       BrotalLib is an open-source library, consisting of various useful code pieces including commonly used types, extension methods, etc.
     </Description>
-    
+
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryType>GIT</RepositoryType>
-    
+
     <PackageTags>Extensions, DateTime Extensions, Natural DateTime, String Extensions, Metadata</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageIconUrl>https://dev.azure.com/brotal/1cab944e-4d85-46df-9204-965846a5d0a0/_apis/git/repositories/77e6a310-1952-44da-b362-83f2474312ab/Items?path=%2FBrotalLib%2FBrotal.png&amp;versionDescriptor%5BversionOptions%5D=0&amp;versionDescriptor%5BversionType%5D=0&amp;versionDescriptor%5Bversion%5D=master&amp;download=false&amp;resolveLfs=true&amp;%24format=octetStream&amp;api-version=5.0-preview.1</PackageIconUrl>
+    <PackageProjectUrl>https://dev.azure.com/brotal/BrotalLib</PackageProjectUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <RepositoryUrl>https://dev.azure.com/brotal/_git/BrotalLib</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
