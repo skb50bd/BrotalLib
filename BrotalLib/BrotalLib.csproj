@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Brotal</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    
+    <Title>BrotalLib</Title>
+    <Version>0.1.0</Version>
+    <Company>Brotal</Company>
+    <Authors>Shakib Haris</Authors>
+    <Copyright>Shakib Haris</Copyright>
+    <Description>
+      BrotalLib is an open-source library, consisting of various useful code pieces including commonly used types, extension methods, etc.
+    </Description>
+    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>GIT</RepositoryType>
+    
+    <PackageTags>Extensions, DateTime Extensions, Natural DateTime, String Extensions, Metadata</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+</Project>
