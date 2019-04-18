@@ -38,5 +38,35 @@ namespace BrotalExtensions.Tests
             string str, 
             string expected) =>
             Equal(expected, str.ToTitleCase());
+
+
+        public static object[][] ToCurrencyTestData =
+        {
+            new object[] { 12M,     "$12.00" },
+            new object[] { 12.011M, "$12.01" },
+            new object[] { 12.001M, "$12.00" },
+            new object[] { 0M,      "$0.00"  },
+            new object[] { 0.111M,  "$0.11"  },
+            new object[] { 12.11M,  "$12.11" }
+        };
+        [Theory, MemberData(nameof(ToCurrencyTestData))]
+        public void ToCurrencyTest(
+            decimal money,
+            string  expected) =>
+            Equal(expected, money.ToCurrency());
+
+        public static object[][] ToCurrencyTestData_OneDigit =
+        {
+            new object[] { 12M,     "$12.0" },
+            new object[] { 12.011M, "$12.0" },
+            new object[] { 0M,      "$0.0"  },
+            new object[] { 0.111M,  "$0.1"  },
+            new object[] { 12.11M,  "$12.1" }
+        };
+        [Theory, MemberData(nameof(ToCurrencyTestData_OneDigit))]
+        public void ToCurrencyTest_OneDigit(
+            decimal money,
+            string  expected) =>
+            Equal(expected, money.ToCurrency(1));
     }
 }

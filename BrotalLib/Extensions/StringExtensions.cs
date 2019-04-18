@@ -11,7 +11,8 @@ namespace Brotal.Extensions
 {
     public static class StringExtensions
     {
-        public static string FromPascalCase(this string str)
+        public static string FromPascalCase(
+            this string str)
         {
             var words = new List<string>();
 
@@ -36,7 +37,8 @@ namespace Brotal.Extensions
             return final.ToString().Trim();
         }
 
-        public static string ToPascalCase(this string str)
+        public static string ToPascalCase(
+            this string str)
         {
             var words = str.Split();
             var output = new StringBuilder();
@@ -49,7 +51,10 @@ namespace Brotal.Extensions
             return output.ToString();
         }
 
-        public static T[] SubArray<T>(this T[] data, int index, int length)
+        public static T[] SubArray<T>(
+            this T[] data, 
+            int index, 
+            int length)
         {
             var result = new T[length];
             Array.Copy(data, index, result, 0, length);
@@ -57,12 +62,8 @@ namespace Brotal.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Given a Camel Case string, it will return the string in plain spaced fashion
-        /// </summary>
-        /// <param name="camelCase">The input camelCase string</param>
-        /// <returns></returns>
-        public static string ToFriendlyCase(this string camelCase) =>
+        public static string ToFriendlyCase(
+            this string camelCase) =>
             Regex.Replace( // Remove Extra Spaces
                 Regex.Replace( // Split The Camel Case Expression
                     camelCase,
@@ -71,16 +72,21 @@ namespace Brotal.Extensions
                 "/ +/ g",
                 " ");
 
-        public static string ToNaturalName(this Enum value)
+        public static string ToNaturalName(
+            this Enum value)
         {
             var fi = value.GetType().GetField(value.ToString());
-            var attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
+                typeof(DescriptionAttribute), 
+                false);
 
-            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
+            return attributes.Length > 0 
+                ? attributes[0].Description 
+                : value.ToString().ToFriendlyCase();
         }
 
-        public static string Capitalize(this string str)
+        public static string Capitalize(
+            this string str)
         {
             var builder = new StringBuilder();
             var firstChar = str.Substring(0, 1)
@@ -93,7 +99,8 @@ namespace Brotal.Extensions
             return builder.ToString();
         }
 
-        public static string ToTitleCase(this string str)
+        public static string ToTitleCase(
+            this string str)
         {
             var builder = new StringBuilder();
             var previousIsSpace = true;
@@ -117,5 +124,10 @@ namespace Brotal.Extensions
 
             return builder.ToString();
         }
+
+        public static string ToCurrency(
+            this decimal money, 
+            int digitsAfterDecimal = 2) =>
+            money.ToString($"C{digitsAfterDecimal}");
     }
 }
