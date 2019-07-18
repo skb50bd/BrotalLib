@@ -68,5 +68,20 @@ namespace BrotalExtensions.Tests
             decimal money,
             string  expected) =>
             Equal(expected, money.ToCurrency(1));
+
+        public static object[][] ToInitialsTestData =
+        {
+            new object[] { "AbD Harm K k", "AdHK" },
+            new object[] { "aDD Ckk", "ddC" },
+            new object[] { "BlazorOnThe Server", "BotS" },
+            new object[] { "BlazorOnThe Client", "BotC" },
+            new object[] { "Ku Klux Klan", "KKK" }
+        };
+
+        [Theory, MemberData(nameof(ToInitialsTestData))]
+        public void ToInitialsTest(
+            string actual,
+            string  expected) =>
+            Equal(expected, actual.ToInitials());
     }
 }

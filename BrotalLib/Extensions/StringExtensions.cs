@@ -129,5 +129,20 @@ namespace Brotal.Extensions
             this decimal money, 
             int digitsAfterDecimal = 2) =>
             money.ToString($"C{digitsAfterDecimal}");
+
+        public static string ToInitials(
+            this string str)
+        {
+            var prev = ' ';
+            var sb = new StringBuilder();
+            foreach (var c in str)
+            {
+                if (IsUpper(c))
+                    sb.Append(prev == ' ' ? c : ToLower(c));
+                prev = c;
+            }
+
+            return sb.ToString();
+        }
     }
 }
