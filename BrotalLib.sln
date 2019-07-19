@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrotalLib", "BrotalLib\BrotalLib.csproj", "{AF98CD41-7FFC-4710-AA65-D3C26A9440CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Tests", "Extensions.Tests\Extensions.Tests.csproj", "{B890F927-BC26-4A91-9C95-9C5D56624C32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrotalLib.Tests", "BrotalLib.Tests\BrotalLib.Tests.csproj", "{B890F927-BC26-4A91-9C95-9C5D56624C32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

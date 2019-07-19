@@ -52,8 +52,8 @@ namespace Brotal.Extensions
         }
 
         public static T[] SubArray<T>(
-            this T[] data, 
-            int index, 
+            this T[] data,
+            int index,
             int length)
         {
             var result = new T[length];
@@ -77,11 +77,11 @@ namespace Brotal.Extensions
         {
             var fi = value.GetType().GetField(value.ToString());
             var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
-                typeof(DescriptionAttribute), 
+                typeof(DescriptionAttribute),
                 false);
 
-            return attributes.Length > 0 
-                ? attributes[0].Description 
+            return attributes.Length > 0
+                ? attributes[0].Description
                 : value.ToString().ToFriendlyCase();
         }
 
@@ -117,6 +117,7 @@ namespace Brotal.Extensions
                 else
                 {
                     previousIsSpace = false;
+                    x = ToLowerInvariant(c);
                 }
 
                 builder.Append(x);
@@ -126,7 +127,7 @@ namespace Brotal.Extensions
         }
 
         public static string ToCurrency(
-            this decimal money, 
+            this decimal money,
             int digitsAfterDecimal = 2) =>
             money.ToString($"C{digitsAfterDecimal}");
 

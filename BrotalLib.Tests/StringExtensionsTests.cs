@@ -20,29 +20,30 @@ namespace BrotalExtensions.Tests
         };
         [Theory, MemberData(nameof(CapitalizeTestData))]
         public void CapitalizeTest(
-            string str, 
-            string expected) => 
+            string str,
+            string expected) =>
             Equal(expected, str.Capitalize());
 
 
         public static object[][] ToTitleCaseTestData =
         {
-            new object[] { "this is a line", "This Is A Line" }, 
-            new object[] { "This is a Line", "This Is A Line" }, 
-            new object[] { "A", "A" }, 
-            new object[] { "aZ", "AZ" }, 
-            new object[] { "  a Z a", "  A Z A" }, 
+            new object[] { "A", "A" },
+            new object[] { "this is a line", "This Is A Line" },
+            new object[] { "This is a Line", "This Is A Line" },
+            new object[] { "sHe Je KoThA dIyE rAkHlO nA", "She Je Kotha Diye Rakhlo Na" },
+            new object[] { "aZ", "Az" },
+            new object[] { "  a Z a", "  A Z A" },
         };
         [Theory, MemberData(nameof(ToTitleCaseTestData))]
         public void ToTitleCaseTest(
-            string str, 
+            string str,
             string expected) =>
             Equal(expected, str.ToTitleCase());
 
 
         public static object[][] ToCurrencyTestData =
         {
-            new object[] { 12M,     "$12.00" },
+            new object[] { 12M, "$12.00" },
             new object[] { 12.011M, "$12.01" },
             new object[] { 12.001M, "$12.00" },
             new object[] { 0M,      "$0.00"  },
@@ -52,7 +53,7 @@ namespace BrotalExtensions.Tests
         [Theory, MemberData(nameof(ToCurrencyTestData))]
         public void ToCurrencyTest(
             decimal money,
-            string  expected) =>
+            string expected) =>
             Equal(expected, money.ToCurrency());
 
         public static object[][] ToCurrencyTestData_OneDigit =
@@ -66,7 +67,7 @@ namespace BrotalExtensions.Tests
         [Theory, MemberData(nameof(ToCurrencyTestData_OneDigit))]
         public void ToCurrencyTest_OneDigit(
             decimal money,
-            string  expected) =>
+            string expected) =>
             Equal(expected, money.ToCurrency(1));
 
         public static object[][] ToInitialsTestData =
@@ -81,7 +82,7 @@ namespace BrotalExtensions.Tests
         [Theory, MemberData(nameof(ToInitialsTestData))]
         public void ToInitialsTest(
             string actual,
-            string  expected) =>
+            string expected) =>
             Equal(expected, actual.ToInitials());
     }
 }
